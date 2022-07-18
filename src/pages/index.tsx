@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Box bg={bg} textAlign="center" rounded="md" mb="3" px="3" py="2">
-        Hello
+        Hello, I`m an frontend developer
       </Box>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolore
       minima nihil, quos tempore, provident ratione natus sunt cumque ipsam
