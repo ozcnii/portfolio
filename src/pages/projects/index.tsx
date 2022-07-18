@@ -5,7 +5,7 @@ import { ProjectList } from "../../components/project/project-list/project-list"
 const Projects: NextPage = () => {
   return (
     <>
-      <Heading>Projects</Heading>
+      <Heading mb="3">Projects</Heading>
       <ProjectList />
     </>
   );
