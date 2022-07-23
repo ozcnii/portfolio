@@ -30,7 +30,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
       </Head>
 
       <chakra.header
-        px="2"
+        px="3"
         backdropFilter="auto"
         backdropBlur="10px"
         h={headerHight}
@@ -82,7 +82,7 @@ export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
         </Flex>
       </chakra.header>
 
-      <chakra.main mt={mainContentMarginTop}>
+      <chakra.main mb="5" mt={mainContentMarginTop}>
         <Container>{children}</Container>
       </chakra.main>
     </>

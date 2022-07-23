@@ -5,4 +5,5 @@ import { ReactNode } from "react";
 export interface NavLinkProps extends NextLinkProps {
   children: ReactNode;
   activeProps?: LinkProps;
+  linkProps?: LinkProps;
 }

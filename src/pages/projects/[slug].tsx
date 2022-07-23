@@ -1,7 +1,11 @@
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 
 const Project: NextPage = () => {
-  return <div>Project page</div>;
+  const {
+    query: { slug },
+  } = useRouter();
+  return <div>Project page {slug}</div>;
 };
 
 export default Project;

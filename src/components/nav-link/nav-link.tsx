@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 export const NavLink: FC<NavLinkProps> = ({
   children,
   activeProps,
+  linkProps,
   ...props
 }) => {
   const router = useRouter();
@@ -22,7 +23,7 @@ export const NavLink: FC<NavLinkProps> = ({
 
   return (
     <NextLink {...props}>
-      <Link>{children}</Link>
+      <Link {...linkProps}>{children}</Link>
     </NextLink>
   );
 };
