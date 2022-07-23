@@ -1,1 +1,5 @@
-export interface ProjectListProps {}
+interface IProject {}
+
+export interface ProjectListProps {
+  projects: IProject;
+}

@@ -18,6 +18,7 @@ export const ProjectItem: FC<ProjectItemProps> = ({
           display="flex"
           flexDirection="column"
           alignItems="center"
+          textAlign="center"
         >
           <Img
             mb="1"
