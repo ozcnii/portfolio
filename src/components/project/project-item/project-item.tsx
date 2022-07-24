@@ -5,10 +5,7 @@ import { Routes } from "../../../routes";
 import Link from "next/link";
 
 export const ProjectItem: FC<ProjectItemProps> = ({
-  title,
-  shortDescription,
-  previewImage,
-  slug,
+  project: { title, shortDescription, previewImage, slug },
 }) => {
   return (
     <ListItem>

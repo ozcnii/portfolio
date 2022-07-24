@@ -1,9 +1,15 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
+import { IProject } from "../../lib/models/projects";
+import { GetStaticPropsContext } from "next";
+import { ParsedUrlQuery } from "querystring";
 
-const Project: NextPage = ({ project }) => {
+interface ProjectPageProps {
+  project: IProject;
+}
+
+const Project: NextPage<ProjectPageProps> = ({ project }) => {
   return <div>Project page {JSON.stringify(project)}</div>;
 };
 
@@ -19,14 +25,18 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+interface IPageParams extends ParsedUrlQuery {
+  slug: string;
+}
+
+export const getStaticProps = async ({
+  params,
+}: GetStaticPropsContext<IPageParams>) => {
   const ref = collection(db, "projects");
-  const q = query(ref, where("slug", "==", "first-project"));
+  const q = query(ref, where("slug", "==", params?.slug));
 
   const querySnapshot = await getDocs(q);
   const project = querySnapshot.docs.map((doc) => doc.data());
-
-  console.log(params, ref, q, project);
 
   if (!project) {
     return {
@@ -37,6 +47,6 @@ export async function getStaticProps({ params }) {
   return {
     props: { project },
   };
-}
+};
 
 export default Project;

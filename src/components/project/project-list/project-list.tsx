@@ -10,14 +10,8 @@ export const ProjectList: FC<ProjectListProps> = ({ projects }) => {
       display="grid"
       gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
     >
-      {projects.map(({ slug, title, previewImage, shortDescription }) => (
-        <ProjectItem
-          key={slug}
-          slug={slug}
-          title={title}
-          shortDescription={shortDescription}
-          previewImage={previewImage}
-        />
+      {projects.map((project) => (
+        <ProjectItem key={project.slug} project={project} />
       ))}
     </List>
   );

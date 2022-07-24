@@ -8,10 +8,12 @@ import {
   motion,
   domAnimation,
 } from "framer-motion";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider>
+      <NextNProgress />
       <MainLayout>
         <LazyMotion features={domAnimation}>
           <AnimatePresence exitBeforeEnter>

@@ -1,6 +1,5 @@
+import { IProject } from "../../../lib/models/projects";
+
 export interface ProjectItemProps {
-  slug: string;
-  title: string;
-  shortDescription: string;
-  previewImage: string;
+  project: IProject;
 }
